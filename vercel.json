@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/appforge/",
+      "destination": "https://appforge-ai-builder-eight.vercel.app/"
+    },
+    {
+      "source": "/appforge/:path*",
+      "destination": "https://appforge-ai-builder-eight.vercel.app/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
