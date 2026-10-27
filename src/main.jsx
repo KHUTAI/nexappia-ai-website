@@ -173,9 +173,7 @@ function App() {
     </main>
   );
 }
-
-
-  if (window.location.pathname === "/account") {
+    if (window.location.pathname === "/account") {
     return (
       <main
         style={{
@@ -183,8 +181,10 @@ function App() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "40px",
-          background: "#f7f8fc",
+          padding: "40px 20px",
+          boxSizing: "border-box",
+          background: "#080d1c",
+          color: "#f8fafc",
           fontFamily: "Arial, sans-serif",
         }}
       >
@@ -192,17 +192,34 @@ function App() {
           style={{
             width: "100%",
             maxWidth: "480px",
-            background: "#ffffff",
+            boxSizing: "border-box",
+            background: "#111a2e",
+            color: "#f8fafc",
             padding: "50px 40px",
             borderRadius: "20px",
-            boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)",
+            border: "1px solid #263653",
+            boxShadow: "0 20px 60px rgba(0, 0, 0, 0.35)",
           }}
         >
+          <p
+            style={{
+              color: "#60a5fa",
+              fontSize: "12px",
+              fontWeight: "700",
+              letterSpacing: "3px",
+              textAlign: "center",
+              marginBottom: "12px",
+            }}
+          >
+            YOUR WORKSPACE
+          </p>
+
           <h1
             style={{
               fontSize: "36px",
               marginBottom: "12px",
               textAlign: "center",
+              color: "#f8fafc",
             }}
           >
             Account
@@ -210,9 +227,10 @@ function App() {
 
           <p
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
+              lineHeight: "1.6",
               marginBottom: "32px",
-              color: "#555",
+              color: "#cbd5e1",
               textAlign: "center",
             }}
           >
@@ -228,20 +246,21 @@ function App() {
               width: "100%",
               padding: "14px",
               fontSize: "16px",
+              fontWeight: "700",
+              color: "#ffffff",
               borderRadius: "10px",
-              border: "1px solid #ccc",
-              background: "#fff",
+              border: "1px solid #3b82f6",
+              background: "#2563eb",
               cursor: "pointer",
             }}
           >
-            Back to Dashboard
+            ← Back to Dashboard
           </button>
 
           <button
             type="button"
             onClick={async () => {
               const { supabase } = await import("./lib/supabase");
-
               const { error } = await supabase.auth.signOut();
 
               if (error) {
@@ -256,8 +275,10 @@ function App() {
               marginTop: "16px",
               padding: "12px",
               fontSize: "15px",
+              fontWeight: "600",
+              color: "#cbd5e1",
               borderRadius: "10px",
-              border: "none",
+              border: "1px solid #334155",
               background: "transparent",
               cursor: "pointer",
             }}
@@ -268,6 +289,7 @@ function App() {
       </main>
     );
   }
+
   if (window.location.pathname === "/signin") {
     return (
       <main
